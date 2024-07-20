@@ -48,12 +48,13 @@
 .Weather .temperature-unit {
   font-size: 40px;
   color: black;
-  font-weight: bold;
-  position: relative;
-  top: -32px;
+}
+
+.Weather .temperature-unit a {
+  color: black;
 }
 
 .Weather img {
   position: relative;
-  top: -20px;
+  top: 10px;
 }
