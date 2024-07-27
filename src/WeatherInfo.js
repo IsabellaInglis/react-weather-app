@@ -12,12 +12,12 @@ export default function WeatherInfo(props) {
           <FormattedDate date={props.data.date} />
         </li>
         <li className="text-capitalize">{props.data.description}</li>
-        <div className="row test">
-          <div className="col-6">
+        <div className="flex items-start">
+          <div className="temperature-container">
             <img src={props.data.icon} alt={props.data.description} />
             <WeatherTemperature celsius={props.data.temperature} />
           </div>
-          <div className="col-6">
+          <div className="py-12">
             <li>Humidity: {props.data.humidity}%</li>
             <li>Wind: {props.data.wind} mph</li>
           </div>
