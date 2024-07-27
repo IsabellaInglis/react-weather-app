@@ -8,10 +8,21 @@ export default function WeatherForecastDay(props) {
     return days[date.getDay()];
   }
 
+  function formatIcon(iconData, iconDescription) {
+    let icon = `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${iconData}.png`;
+    return <img src={icon} alt={iconDescription} />;
+  }
+
   return (
     <div className="WeatherForecastDay">
       <div className="forecast-day">{formatDay(props.data.time)}</div>
-      <img src={props.icon} alt={props.data.description} />
+      <div>
+        {formatIcon(
+          props.data.condition.icon,
+          props.data.condition.description
+        )}
+      </div>
+
       <div className="forecast-temperature">
         <span className="forecast-temperature-max">
           {Math.round(props.data.temperature.maximum)}º
